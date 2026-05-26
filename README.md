@@ -13,8 +13,10 @@ It bridges the gap between raw, noisy analog load cells and a clean, event-drive
 ## 📂 Architecture Structure
 
 * **`Firmware_RA6E2/`** *Cortex-M33 C code utilizing the Flexible Software Package (FSP).*
-  * **Current Focus:** 200MHz hardware clock routing, IEEE-754 Hardware FPU acceleration, and Software-in-the-Loop (SIL) kinetic noise simulation.
-  * Hardware-accelerated CMSIS-DSP FIR filtering to crush EMI noise.
+  * **Current Focus:** Non-blocking bitwise matrix keypad scanning for zero-latency CPU execution.
+  * 200MHz hardware clock routing and IEEE-754 Hardware FPU acceleration.
+  * Software-in-the-Loop (SIL) kinetic noise simulation and non-blocking safety state machines.
+  * Hardware-accelerated CMSIS-DSP FIR filtering to natively crush EMI noise.
   * ARM TrustZone® implementation separating VIP logic (Secure) from telemetry (Non-Secure).
 * **`Middleware_Python/`** *Asynchronous `pyserial` translator.*
   * Full-duplex WebSocket bridge breaking the local USB browser sandbox.
@@ -28,4 +30,5 @@ It bridges the gap between raw, noisy analog load cells and a clean, event-drive
 * [x] **Architecture Blueprint:** System design, repository structure, and data flow established.
 * [x] **Safety State Machines & SIL Simulation:** C-code logic for synthetic kinetic noise injection and non-blocking overload handling uploaded.
 * [x] **Silicon Configuration:** 200MHz FSP clock tree and Hardware FPU enablement files locked in.
-* [ ] **Hardware Polling:** Non-blocking matrix keypad math and bitwise scanning logic *(Next up)*.
+* [x] **Hardware Polling:** Non-blocking matrix keypad math and bitwise scanning logic uploaded.
+* [ ] **Telemetry Bridge:** Asynchronous full-duplex WebSocket integration via Python *(Next up)*.
