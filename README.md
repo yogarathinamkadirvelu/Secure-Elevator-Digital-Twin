@@ -13,13 +13,13 @@ It bridges the gap between raw, noisy analog load cells and a clean, event-drive
 ## 📂 Architecture Structure
 
 * **`Firmware_RA6E2/`** *Cortex-M33 C code utilizing the Flexible Software Package (FSP).*
-  * **Current Focus:** Non-blocking bitwise matrix keypad scanning for zero-latency CPU execution.
   * 200MHz hardware clock routing and IEEE-754 Hardware FPU acceleration.
+  * Non-blocking bitwise matrix keypad scanning for zero-latency CPU execution.
   * Software-in-the-Loop (SIL) kinetic noise simulation and non-blocking safety state machines.
   * Hardware-accelerated CMSIS-DSP FIR filtering to natively crush EMI noise.
   * ARM TrustZone® implementation separating VIP logic (Secure) from telemetry (Non-Secure).
 * **`Middleware_Python/`** *Asynchronous `pyserial` translator.*
-  * Full-duplex WebSocket bridge breaking the local USB browser sandbox.
+  * **Current Focus:** Full-duplex WebSocket bridge breaking the local USB browser sandbox.
 * **`Dashboard_Web/`** *Zero-latency, event-driven HTML/Vanilla JS UI.*
   * Direct DOM manipulation for sub-millisecond hardware synchronization.
 
@@ -31,4 +31,5 @@ It bridges the gap between raw, noisy analog load cells and a clean, event-drive
 * [x] **Safety State Machines & SIL Simulation:** C-code logic for synthetic kinetic noise injection and non-blocking overload handling uploaded.
 * [x] **Silicon Configuration:** 200MHz FSP clock tree and Hardware FPU enablement files locked in.
 * [x] **Hardware Polling:** Non-blocking matrix keypad math and bitwise scanning logic uploaded.
-* [ ] **Telemetry Bridge:** Asynchronous full-duplex WebSocket integration via Python *(Next up)*.
+* [x] **Telemetry Bridge:** Asynchronous full-duplex WebSocket integration via Python uploaded.
+* [ ] **Hardware-Level Security:** ARM TrustZone memory partitioning and VIP access protocols *(Next up)*.
