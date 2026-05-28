@@ -13,7 +13,8 @@ It bridges the gap between raw, noisy analog load cells and a clean, event-drive
 ## 📂 Architecture Structure
 
 * **`Firmware_RA6E2/`** *Cortex-M33 C code utilizing the Flexible Software Package (FSP).*
-  * **Current Focus (Week 3 Update):** 200MHz hardware clock routing and IEEE-754 Hardware FPU acceleration enabled via `configuration.xml`.
+  * **Current Focus:** Non-blocking bitwise matrix keypad scanning for zero-latency CPU execution.
+  * 200MHz hardware clock routing and IEEE-754 Hardware FPU acceleration.
   * Software-in-the-Loop (SIL) kinetic noise simulation and non-blocking safety state machines.
   * Hardware-accelerated CMSIS-DSP FIR filtering to natively crush EMI noise.
   * ARM TrustZone® implementation separating VIP logic (Secure) from telemetry (Non-Secure).
@@ -23,10 +24,11 @@ It bridges the gap between raw, noisy analog load cells and a clean, event-drive
   * Direct DOM manipulation for sub-millisecond hardware synchronization.
 
 ---
-## 🗓️ 20-Week Silicon-to-Screen Engineering Series
-*The source code and architectural documentation are being pushed progressively. Active deployment status:*
+## 🚀 Development Milestones & Upload Status
+*The source code and architectural documentation are being pushed progressively. Current deployment status:*
 
-* [x] **Week 1:** The Cyber-Physical Architecture & Repository Blueprint
-* [x] **Week 2:** The Digital Torture Chamber (SIL Noise Simulation logic uploaded)
-* [x] **Week 3:** The Silicon Selection (200MHz FSP Clock Tree & Hardware FPU configurations uploaded)
-* [ ] **Week 4:** *Next up: The Matrix Keypad Math (Non-Blocking Bitwise Polling)*
+* [x] **Architecture Blueprint:** System design, repository structure, and data flow established.
+* [x] **Safety State Machines & SIL Simulation:** C-code logic for synthetic kinetic noise injection and non-blocking overload handling uploaded.
+* [x] **Silicon Configuration:** 200MHz FSP clock tree and Hardware FPU enablement files locked in.
+* [x] **Hardware Polling:** Non-blocking matrix keypad math and bitwise scanning logic uploaded.
+* [ ] **Telemetry Bridge:** Asynchronous full-duplex WebSocket integration via Python *(Next up)*.
